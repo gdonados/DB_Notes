@@ -1,7 +1,32 @@
 [2023-01-19]
 ==> Notes <==
 - Starting mysql: mysql -u donado24 -p
-- 
+
+==> Chapter 1 Reading <==
+Definitions:
+- DBMS: Database Management System; a system that enables users to interact with the database
+- Meta-data: Descriptions of the database and how it information is stored
+    - I.e. data types, number of columns, etc
+- Query: Causes data to be retrieved from the DB
+- Transaction: Reads/writes data from/to the DB; an executing program
+- Data records: Also known as files, stores the data in the DB
+- Data elements: Defines the information that is stored in a table
+- Self-describing data: Used by some SQL systems, no meta-data, the information describes itself
+- Views: Different ways of accessing the DB depending on the need of the users
+    - Can hide information from user as well
+- Denormalization: The same data may be saved in different places if needed
+    - Reduces query times due to less files being accessed
+- Integrity Constraints: Data constraints for the DB
+    - Something like forcing a column to be a certain data type
+
+Notes:
+- DBMS systems reduce redundancy in storing the same information in multiple places
+    - Users may also incorreclty update some files, resulting in inconsistency
+- Every entry must have some unique value, known as a key
+- Constraints won't catch everything, if data is incorrectly entered but passes all constraints, the issue must be manually recitifed
+- A DBMS may not always be beneficial, as there is an overhead for getting started
+    - Custom applications may need to be written if less general functionality is needed
+- A DBMS would not fit on an embedded system, not enough storage
 
 ==> TODO <==
 - 
