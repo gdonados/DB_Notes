@@ -1,0 +1,49 @@
+[2023-01-26]
+==> Notes <==
+- Data model: A set of concepts to describe the structure of a database
+- Constructs are used to define the databases structures
+    - Elements
+    - Groupds of elements
+    - Relationships among elements
+- *Constraints* specify restrictions for valid data
+    - Forces specific formats/types
+- Operations can include basic operations, such as retrieve and update, and specific user definitions
+- Different data models:
+    - Conceptual
+    - Physical
+    - Implementation
+    - Self describing
+- Database schema: describes a database
+- Database state: the actual data stored in a database at a particular time
+- Schema: 
+    - Also known as intension
+    - Changes infrequently
+    - Columns/elements
+
+- State: 
+    - Also known as extension
+    - Changes every time the database is updated
+    - The actual data filled in the columns
+
+- Three-Schema Architecture
+    - Program-data independence
+    - Supports multiple views of the data
+    - Not explicitly used, but good for description
+    - Defines the DB at 3 levels:
+        - Internal schema
+            - Describes the physical storage structures
+        - Conceptual schema
+            - Describes the structure and constraints for the whole DB
+        - External Schema
+            - Describes the various user views
+
+- Using MySQL Workbench
+    - Need a VPN or be on campus
+    - access.rowan.edu while off campus
+        - Use Rowan credentials
+    - ssh donado24@elvis.rowan.edu
+    - If you want to change password: SET PASSWORD = 'new_password';
+    - MySQL commands need a semicolon delimeter at the end (;)
+    - 
+    
+==> TODO <==
