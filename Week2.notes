@@ -44,6 +44,113 @@
     - ssh donado24@elvis.rowan.edu
     - If you want to change password: SET PASSWORD = 'new_password';
     - MySQL commands need a semicolon delimeter at the end (;)
-    - 
+
+==> Chapter 2 Reading <==
+- Client module: typically designed to run on a mobile device, user workstation, or PC
+- Server module: handles data storage, access, and other functions
+- Data abstraction: hides the specifics of implementation and highlights the key features
+- Data model: a collection of concepts that can be used to describe the structure of a database
+- Categories of Data Models:
+    - Conceptual data models
+        - Also known as high level data models
+        - Entity: represents a real world object
+        - Attribute: Some property that further descirbes and entity
+        - Relationship: Association among entities
+    - Physical data models
+        - Also known as low level data models
+        - Describes how data is stored in files
+        - Uses record formats, orderings, and access paths
+        - An *Access Path* is a search structure that makes the search for records efficient
+    - Representational data models
+        - Middle ground between conceptual and physical
+        - Provides concepts that are easily understood by an end user
+        - Also known as record based data models
+        - Represent data by using record structures
+    - Self Describing data models
+        - Data is stored with both the relevant information and the Descriptions
+        - XML, NOSQL
+
+- There is a difference between the description of a database and the database itself
+    - The description is known as the Database Schema
+        - Does not change frequently
+        - For example, column names
+        - An outline is knwn as a schema diagram
+        - Each object (column name) in a schema is known as a *schema construct*
+        - Schema diagrams often do not represent details like constraints
+
+    - The data in a database at a particular moment in time is known as a database state or snapshot
+        - Current set of occurenxes
     
+    - When we create a new database, we identify the schema to the DBMS
+        - There is no data to start with, an empty state
+    - The initial state of the database is the state when it is first populated
+    - A valid state is when all constraints are met
+    - Schema can be changed over the lifecycle of the database, known as schema evolution
+
+- Three-Schema Architecture
+    - Separates the user application from the physical database
+    - The *Internal Schema* describes the physical storage structure of the database
+    - The *Conceptual Schema* describes the structure of the whole database for users
+        - Hides physical storage details
+        - Describes entities, data types, relationships, constraints, etc.
+    - The *External Schema* includes different views
+    - The three-schema architecture is typically used for visualisation, and usually isn't explicitly defined
+
+- Data independence
+    - The schema at one level of a database should not affect the other levels
+    - For example, removing a column should not affect the remaining columns
+    - *Physical data independence* is a change in the way files are stored
+        - Does not change conceptual schema
+        - Say we improve the pathing to retrieve a specific set of files, we should still be able to retrieve that information with the same query
+
+- Database Languages
+    - Data Definition Language
+        - DDL
+        - No strict separation of levels is maintained
+        - Compiled to process DDL statements to identify descriptions
+    - Storage Definition Language
+        - SDL
+        - Used to specify the internal schema
+        - Physical layer
+    - View Definition Language
+        - VDL
+        - Specifies user views and mappings
+    - Most DBMS's use DDL to define conceptual and external schema
+    - In relational DBMS's, SQL is used as a VDL
+    - The above are used to create schemas
+
+    - Data Manipulation Language
+        - DML
+        - Retrieval, insertion, deletion, etc.
+        - Manipulates the database
+    
+    - All above languages are usually incorporated into one integrated language
+        - Meaning, none of the above usually exist on their own
+    - SQL combines DDL, VDL, and DML, as well as constraint specification
+    - 2 types of DML: High-level and nonprocedural
+        - high-level are usual interactive with the user or in a general purpose programming language
+        - low-level, or procedural, must be embedded in a programming language
+            - Typically retrieves indidivual records from a database separate from the processing
+            - Therefore, it uses programming language constraints, such as looping, to retrieve
+        - SQL is considered a high level DML language
+            - Multiple records can be retrieved with a single DML statement
+        - High-level DML specifies what to retrieve instead of how to retrieve it
+        - A DML used in an interactive manner is known as a *query language*
+
+- DBMS Interfaces
+    - Menu based, lists options in menus to lead the user to a request
+    - App-based usually provide limited options and a login
+    - Form-based interfaces have the user fill out a form for requests
+    - GUI's use both menus and forms to present the data to a user
+    - Many others
+
+- Software Components of a DBMS
+    - Disk access in a database is typically controlled via an operating system
+    - A query optimizer will rearrange operations to improve efficiency
+    - A precompiler will extract DML commands from a host language, such as C/C++, then sent to the host
+
+- An application programming interface (API) provides software to call to a DBMS in an application program
+- More layers can be added to a hirerarchy to increase performance and security
+- 
+
 ==> TODO <==
