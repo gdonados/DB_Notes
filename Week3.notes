@@ -1,0 +1,10 @@
+[2023-02-02]
+==> Notes <==
+- Entity relationship model
+
+- public_html changing info
+    - DO NOT RUN -755 WITH CHMOD
+    - Changing index.html will change homepage stuff
+    - 
+
+==> TODO <==
