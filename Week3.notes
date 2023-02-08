@@ -7,4 +7,36 @@
     - Changing index.html will change homepage stuff
     - 
 
+==> Book Notes <==
+- Composite vs Simple attributes
+    - Composite:
+        - Can be divided into smaller sub-parts
+        - Address can be divided into street address, city, state
+    - Simple (atomic):
+        - Are not divisble
+
+- Attributes can have either single or multiple values
+- Attributes can also be stored vs derived
+    - Derived attributes are calculated from some stored attribute
+- Can also have NULL values
+- An entity type defines a colelctio of entities that share attributes
+- Each entity needs a key or uniqueness constraint
+- A weak entity type has no key
+- A vlue set defines a set of values that can be assigned to an attribute
+
+- Relationships:
+    - Relationship type, R
+    - # of entities, n
+
+- ER diagram format
+    - Regular entity types (with key) are shown in rectangular boxes
+    - Relationship types are shown in diamond boxes
+    - Attributes are shown in ovals
+    - Multivalued attributes are shown in double ovals
+    - Key attributes have their name underlined
+    - Derived attributesare shown as dotted ovals
+    - Weak entity types are in double rectangles
+        - Their identifying relationship is shown in double diamonds
+    - 
+
 ==> TODO <==
