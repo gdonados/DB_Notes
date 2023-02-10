@@ -1,0 +1,8 @@
+[2023-02-09]
+==> Notes <==
+- = (o), superclass attributes have to be present in AT LEAST ONE of the subclasses
+    - - is CAN BE
+- = (d), ONLY ONE of the subclasses
+    - - is CAN BE
+
+==> TODO <==
