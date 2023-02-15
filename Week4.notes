@@ -5,4 +5,25 @@
 - = (d), ONLY ONE of the subclasses
     - - is CAN BE
 
+==> Book Notes <==
+- Entities can inherit attributes of parent entities through a union
+- Subclass also inherits all relationships
+- Specialization is the set of subclasses of an entity
+- Circle notation is not used if there is only a single subclass on a branch
+- d stands for disjoint
+    - For example, an EMPLOYEE can only be one type of specialization, i.e. a SECRETARY, MANAGER, etc.
+- o stands for overlapping
+    - May be a member of one or more of the subclasses
+    - A part can be both manufactured and purchased
+- = d, entity MUST HAVE a subclass in the specialization
+- - d, entity may not have a subclass in the specialization
+- A subclass can be a subclass of MULTIPLE SUPERCLASSES
+- Called a shared subclass
+- Multiple superclasses to one subclass can be represented by a (U) as well
+    - No U means the member of a subclass HAS TO BE PRESENT in all the superclasses
+    - A Union (U) means it can be present in 1, does not need to be present in the others
+    - Only inherits the attributes of the superclass it is part of with (U)
+
+- 
+
 ==> TODO <==
