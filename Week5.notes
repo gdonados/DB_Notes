@@ -1,0 +1,172 @@
+==> Class Notes <==
+- CREATE Statament
+    - Creates something
+    - CREATE TABLE creates a new table
+    -   
+    CREATE TABLE databse_name.table_name
+    (
+        field_one type constraints(NOT NULL, AUTO_INCREMENT),
+        field_two type constraint
+        PRIMARY_KEY(field_one) //define which field is the primary key
+    )
+
+    - varchar(#), string
+    - int
+    - text, long varchar
+    - Example:
+        CREATE TABLE donado24.student
+        (
+            student_id int NOT NULL AUTO_INCREMENT,
+            last_name varchar(255) NOT NULL,
+            first_name varchar(255) NOT NULL,
+            major varchar(100) NOT NULL,
+            class int NOT NULL,
+            PRIMARY KEY(student_id)
+        );
+
+    - Terminate with semicolon
+    - Can have multiple queries in one script, i.e. can create multiple tables
+    - Do not need to specify constraints
+    - Another example:
+        CREATE TABLE donado24.section
+        (
+        section_id int NOT NULL AUTO_INCREMENT,
+        course_id int,
+        semester varchar(50),
+        semester_year int NOT NULL,
+        instructor varchar(200) NOT NULL,
+        PRIMARY KEY(section_id)
+        );
+
+    - Semicolons are only needed if there are multiple queries in one script
+    - Foreign keys need the same name that exists in the other table
+- INSERT
+    - INSERT INTO dbname
+    - First line describes the attribute names, followed by:
+    - VALUES
+        - Filled with actual values
+    - Example:
+        INSERT INTO donado24.student
+        (
+            last_name,
+            first_name,
+            major,
+            class
+        )
+        VALUES
+        (
+            'croft',
+            'lara',
+            'CS',
+            1
+        )
+
+- SELECT
+    - SELECT what_you_want FROM database.table_name
+    - Example:
+        SELECT * FROM donado24.student; //Selects all (*)
+    - Example:
+        SELECT last_name, first_name FROM donado24.student; //Selects last_name and first_name info
+    - WHERE
+        - Can be used to select only specifc rows
+        - WHERE attribute_name = desired_value
+        - Example:
+            SELECT * FROM donado24.student
+            WHERE class = 1
+        
+        - Can write conditionals such as AND and OR
+        - Example:
+            SELECT * FROM donado24.student
+            WHERE class = 1 AND last_name = 'mog'
+
+        - Example:
+            SELECT * FROM donado24.student
+            WHERE class = 1 OR major = 'ECE'
+
+        - Can also use NOT
+        - Example:
+            SELECT * FROM donado24.student
+            WHERE NOT major = 'cs'
+        
+        - Example:
+            SELECT * FROM adventureworks.product
+            WHERE SafetyStockLevel = 500 AND NOT MakeFlag = 0
+
+    - ORDER BY
+        - ORDER BY attribute_name1, attribute_name2
+        - Alphanumeric ordering of results
+        - Orders by first attribute, then second
+        - Example:
+            SELECT * FROM donado24.student
+            ORDER BY major
+
+        - Can use "asc" and "desc" at the end to order a specific way
+    
+    - Can combine WHERE and ORDER BY
+    - Example:
+        SELECT * FROM donado24.student
+        WHERE class = 1
+        ORDER BY major
+
+    - Aggregate Functions:
+        - COUNT(of_what) will give the count of rows with provided info
+            - COUNT(*) returns number of rows
+            - Example:
+                SELECT COUNT(*) FROM adventureworks.product
+            - Can add WHERE as well
+
+        - SUM() will return the sum of a provided attribute
+        - AS provide_name
+            - Returns the select output with an 'alias' that has provided name
+        - AVG() returns average
+        - MIN() is minimum value of a provided column
+        - MAX(), you guessed it
+        - LIKE
+            - Seems like used with WHERE
+            - WHERE attribute LIKE '%logo%'
+                - The thing between the '' is like a regex, called a wildcard
+                - % % is a substring
+                - Can use COUNT with this as well
+        - BETWEEN
+            - Used with WHERE
+            - BETWEEN value1 AND value2
+            - Range of values
+        - IN
+            - Used with a Foreign Key
+            - WHERE foureign_key IN(SELECT foreign_key FROM dbname.table_name WHERE ~~)
+            - Called a *SUB QUERY*
+            - This one represents "Select the foreign key from a list retrieved from the sub query"
+        - GROUP BY
+            - Will group results by count
+            - May only work with COUNT
+            - HAVING
+                - Can use with COUNT()
+                - >, <, >=, <=, ==
+                - NEED GROUP BY TO USE
+        - 
+    
+    - You can give an alias for a select at the end
+
+- UPDATE
+    - UPDATE dbname.table_name
+    - SET attribute_name = new_value
+    - Can use where to do multiple
+    - Example:
+        UPDATE donado24.student
+        SET class = 2
+        WHERE student_id = 1
+
+- DELETE
+    - DELETE FROM dbname.table_name
+        - THIS WILL DELETE EVERYTHING ALONE
+        - SPECIFY WITH WHERE
+    - WHERE attribute_name = value
+    - Example:
+        DELETE FROM donado24.student
+        WHERE student_id = 3
+
+- 
+
+- To comment, in MySQL, use #
+    - Or --
+- 
